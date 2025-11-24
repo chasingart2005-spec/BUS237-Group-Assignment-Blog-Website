@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI in Supply Chain Automation – BUS 237 D202 Group 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="BUS 237 Group 3 website on AI in supply chain automation: overview, impact, applications, advantages, disadvantages, real-world examples, and future outlook."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #0b1220;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.25);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.15),
+        rgba(56, 189, 248, 0.02)
+      );
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0.3rem auto 1.5rem;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .badge-row {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      padding: 0.25rem 0.8rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.96)
+      );
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0.3rem 0 0.7rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 880px) {
+      .grid-2 {
+        grid-template-columns: 1.5fr 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-2-balanced {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 60%);
+      border-radius: 1rem;
+      padding: 1.3rem 1.3rem 1.1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+
+    ul, ol {
+      padding-left: 1.3rem;
+      margin-top: 0.4rem;
+    }
+
+    li {
+      margin: 0.2rem 0;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-left: 2px solid var(--accent-soft);
+      padding-left: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .example-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .team-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 700px) {
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .team-member {
+      padding: 0.8rem 0.9rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.9rem;
+    }
+
+    .team-member strong {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .refs {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .refs li {
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.25rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--bg-alt);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85rem;
+      padding: 0.15rem 0.35rem;
+      border-radius: 0.25rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-title">AI in Supply Chain Automation</div>
+    <p class="hero-subtitle">
+      How artificial intelligence is transforming forecasting, warehousing,
+      logistics, and decision-making across global supply chains.
+    </p>
+    <div class="meta">
+      BUS 237 – Introduction to Business Technology Management<br />
+      Tutorial <strong>D202</strong> · Group <strong>3</strong>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Topic: AI in Supply Chain Automation</span>
+      <span class="badge">Public site for BUS 237 students</span>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-title">D202 · Group 3</div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#why">Why It Matters</a>
+        <a href="#impact">Impact</a>
+        <a href="#applications">Applications</a>
+        <a href="#pros-cons">Advantages &amp; Costs</a>
+        <a href="#examples">Real World Examples</a>
+        <a href="#outlook">Future Outlook</a>
+        <a href="#team">Team</a>
+        <a href="#references">References</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Overview -->
+    <section id="overview">
+      <h2>Overview of AI in Supply Chain Automation</h2>
+      <div class="grid grid-2">
+        <div>
+          <p>
+            COVID-19 exposed major vulnerabilities in global supply chains and
+            prompted businesses to look for ways to <span class="highlight">de-risk operations</span>.
+            One of the key responses has been the rapid adoption of artificial
+            intelligence (AI) to anticipate, detect, and adapt to disruptions
+            (Van Hoek &amp; Lacity, 2023).
+          </p>
+          <p>
+            Modern supply chains are highly complex networks that rely on precise
+            timing, accurate forecasting, and fast problem-solving. AI systems can:
+          </p>
+          <ul>
+            <li>Collect and integrate large datasets from multiple sources</li>
+            <li>Detect patterns and anomalies in real time</li>
+            <li>Support or automate operational decisions</li>
+          </ul>
+          <p>
+            In addition to analytics, <span class="highlight">AI-enabled robotics</span> now perform
+            physical tasks in manufacturing, warehousing, and distribution. Together,
+            these tools help companies forecast disruptions, improve efficiency,
+            and automate critical processes at scale.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Quick Snapshot</h3>
+          <ul>
+            <li><strong>Before AI:</strong> manual planning, slow data flows, reactive decisions.</li>
+            <li><strong>With AI:</strong> automated analysis, predictive planning, faster responses.</li>
+            <li><strong>Core idea:</strong> use data + algorithms to move from guessing to
+              <span class="highlight">data-driven decisions</span>.</li>
+          </ul>
+          <p class="tagline">
+            AI doesn’t replace the entire supply chain — it makes every stage smarter and
+            more responsive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It Matters -->
+    <section id="why">
+      <h2>Why AI Matters in Today’s Supply Chains</h2>
+      <div class="grid grid-2-balanced">
+        <div class="card">
+          <h3>Key Reasons</h3>
+          <ul>
+            <li>Supply chains are more global and complex than ever.</li>
+            <li>Demand patterns are volatile and harder to predict.</li>
+            <li>Customers expect fast, reliable, trackable deliveries.</li>
+            <li>Disruptions (pandemics, wars, extreme weather) are now common.</li>
+          </ul>
+          <p>
+            AI helps organizations <strong>stay resilient</strong> by using data to prevent,
+            absorb, and recover from disruptions faster than traditional methods.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Business Value</h3>
+          <ul>
+            <li>Improves prediction accuracy and reduces inventory waste</li>
+            <li>Helps prevent stockouts and lost sales</li>
+            <li>Supports cost savings in logistics and warehousing</li>
+            <li>Enables real-time visibility and smarter trade-offs</li>
+            <li>Creates competitive advantage for early adopters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact">
+      <h2>AI’s Impact on Supply Chain Automation</h2>
+      <div class="grid grid-2-balanced">
+        <div>
+          <p>
+            AI is already reshaping supply chain operations across planning,
+            procurement, warehousing, and logistics. It is used to:
+          </p>
+          <ul>
+            <li>Improve forecasting accuracy and demand planning</li>
+            <li>Automate repetitive back-office tasks like data entry</li>
+            <li>Optimize inventory levels across locations</li>
+            <li>Enhance real-time shipment tracking and route decisions</li>
+          </ul>
+          <p>
+            Generative AI (Gen AI) is emerging as a powerful tool for
+            <strong>scenario planning</strong>, simulating different “what-if” events
+            and suggesting responses across the trillion-dollar global supply
+            chain industry (Oca et al., 2025).
+          </p>
+        </div>
+        <div class="card">
+          <h3>Impact at a Glance</h3>
+          <ul>
+            <li>Better forecasts → fewer stockouts &amp; overstocks</li>
+            <li>Faster decisions → less downtime during disruptions</li>
+            <li>Automation → lower labor costs &amp; fewer manual errors</li>
+            <li>Visibility → more control over complex networks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications -->
+    <section id="applications">
+      <h2>Key AI Applications in the Supply Chain</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Inventory Management</h3>
+          <p>
+            AI analyzes historical sales, purchase orders, and external signals to
+            forecast demand and maintain optimal stock levels.
+          </p>
+          <ul>
+            <li>Demand forecasting</li>
+            <li>Safety stock optimization</li>
+            <li>Reducing overstock and obsolescence</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Back-Office Automation</h3>
+          <p>
+            AI tools reduce manual data work and improve data quality by automating:
+          </p>
+          <ul>
+            <li>Data entry and validation</li>
+            <li>Invoice processing</li>
+            <li>Purchase order matching</li>
+          </ul>
+          <p>
+            This saves time and lowers the risk of human error in critical systems.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Warehouse &amp; Logistics Automation</h3>
+          <p>
+            AI-enabled robots and routing software streamline the physical side of
+            supply chains:
+          </p>
+          <ul>
+            <li>Automated picking and sorting robots</li>
+            <li>Smarter storage layout and space utilization</li>
+            <li>Route optimization for delivery fleets</li>
+            <li>Real-time tracking and ETA updates</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages & Disadvantages -->
+    <section id="pros-cons">
+      <h2>Advantages and Costs of AI in Supply Chains</h2>
+      <div class="grid grid-2-balanced">
+        <div class="card">
+          <h3>Advantages &amp; Benefits</h3>
+          <ul>
+            <li>Reduces operational costs by automating routine tasks</li>
+            <li>Improves accuracy in forecasting and planning</li>
+            <li>Increases productivity and throughput in warehouses</li>
+            <li>Supports better, faster decisions with real-time insights</li>
+            <li>Enhances customer satisfaction via reliable delivery</li>
+            <li>Helps identify inefficiencies and lost or delayed inventory</li>
+            <li>Prevents overstock and unnecessary inventory buildup</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Disadvantages &amp; Costs</h3>
+          <ul>
+            <li>High upfront investment in hardware, software, and integration</li>
+            <li>Significant time and cost needed to gather and clean data</li>
+            <li>
+              If trained on incomplete or poor-quality data, AI can generate
+              <strong>bad recommendations</strong> that slow operations
+            </li>
+            <li>Requires employee training and change management</li>
+            <li>Raises cybersecurity and data-privacy concerns</li>
+            <li>Risk of over-reliance on automation if systems fail</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real World Examples -->
+    <section id="examples">
+      <h2>Real World Applications</h2>
+      <div class="grid grid-2-balanced">
+        <div class="card">
+          <div class="example-label">Case Study · Amazon</div>
+          <h3>DeepFleet – Smarter Robot Fleets</h3>
+          <p>
+            Amazon uses <strong>DeepFleet</strong>, a Gen AI model that optimizes the movement
+            of warehouse robots. It has:
+          </p>
+          <ul>
+            <li>Improved robot travel time by about <strong>10%</strong></li>
+            <li>Lowered operating costs and reduced energy consumption</li>
+            <li>Helped accelerate order picking and processing</li>
+          </ul>
+          <p class="tagline">
+            Small efficiency gains at robot level add up to huge savings across
+            millions of packages.
+          </p>
+        </div>
+        <div class="card">
+          <div class="example-label">Case Study · Amazon</div>
+          <h3>Sequoia – Robotics + Computer Vision</h3>
+          <p>
+            Amazon’s <strong>Sequoia</strong> system blends AI, robotics, and computer vision
+            to automatically identify, store, and move inventory. This system:
+          </p>
+          <ul>
+            <li>Stores and organizes inventory up to <strong>75% faster</strong></li>
+            <li>Frees up extra storage space in warehouses</li>
+            <li>Makes it easier and quicker for employees to collect orders</li>
+          </ul>
+          <p>
+            Together, these tools show how AI can transform warehouse operations
+            from manual and reactive to automated and optimized.
+          </p>
+        </div>
+      </div>
+      <p>
+        Beyond Amazon, many other companies are integrating AI to support
+        forecasting, sourcing, and logistics across industries like retail,
+        manufacturing, and transportation (Walch, 2025; Tsidulko, 2024).
+      </p>
+    </section>
+
+    <!-- Outlook -->
+    <section id="outlook">
+      <h2>Outlook and Future Use</h2>
+      <p>
+        While AI is already delivering real value, most organizations are still in
+        the <strong>early stages</strong> of adoption. Many companies use AI for
+        specific tasks (such as forecasting or routing) rather than for fully
+        end-to-end automation.
+      </p>
+      <p class="quote">
+        “The future of Gen AI and supply chain management is so promising. It has
+        the potential to significantly enhance efficiency, decision-making, and
+        operational performance.” – Oca et al. (2025)
+      </p>
+      <p>
+        Experts agree that a single AI model is not yet able to manage an entire
+        supply chain on its own (Van Hoek &amp; Lacity, 2023). However, as AI
+        tools mature and become more connected, we can expect:
+      </p>
+      <ul>
+        <li>Deeper integration between planning systems and real-time data</li>
+        <li>More autonomous robots and vehicles in warehouses and transport</li>
+        <li>Greater use of generative AI for scenario planning and simulation</li>
+        <li>New roles focused on overseeing and governing AI-driven operations</li>
+      </ul>
+      <p>
+        Overall, AI is moving from a “nice-to-have” experiment to an essential
+        building block of <strong>modern, resilient supply chains</strong>.
+      </p>
+    </section>
+
+    <!-- Team -->
+    <section id="team">
+      <h2>Group Members &amp; Tutorial Info</h2>
+      <p>
+        This website was created for the BUS 237 group project on
+        <strong>AI in Supply Chain Automation</strong>.
+      </p>
+      <p>
+        Tutorial: <strong>D202</strong> · Group: <strong>3</strong>
+      </p>
+      <div class="team-grid">
+        <div class="team-member">
+          <strong>Syed Ibrahim</strong>
+          <span>Research &amp; writing – overview and impact of AI.</span>
+        </div>
+        <div class="team-member">
+          <strong>Keyan Jagpal</strong>
+          <span>Research – applications &amp; advantages.</span>
+        </div>
+        <div class="team-member">
+          <strong>Christopher Jang</strong>
+          <span>Slides &amp; structure – key applications and visuals.</span>
+        </div>
+        <div class="team-member">
+          <strong>Malik iddi Mbita</strong>
+          <span>Research – disadvantages, costs, and risk considerations.</span>
+        </div>
+        <div class="team-member">
+          <strong>Chase Tone</strong>
+          <span>Website &amp; editing – converting report and slides into web format.</span>
+        </div>
+      </div>
+      <p class="tagline">
+        All BUS 237 students are welcome to browse this site as a summary of our
+        report and presentation on AI in supply chain automation.
+      </p>
+    </section>
+
+    <!-- References -->
+    <section id="references">
+      <h2>References &amp; Further Reading</h2>
+      <p>
+        Below are some of the main sources we used in our report and
+        presentation. These are good starting points if you want to explore AI
+        in supply chains more deeply.
+      </p>
+      <ul class="refs">
+        <li>
+          Downie, A., &amp; Finn, T. (2024, May 20). <em>What is AI in the supply chain?</em>
+          IBM Think. https://www.ibm.com/think/topics/ai-supply-chain
+        </li>
+        <li>
+          Greenawalt, T. (2025a, October 22). <em>Amazon delivery: New innovations like robots,
+          AI tools, smart glasses, and more.</em> About Amazon.
+        </li>
+        <li>
+          Greenawalt, T. (2025b, October 22). <em>Amazon robotics: Meet the robots inside
+          fulfillment centers.</em> About Amazon.
+        </li>
+        <li>
+          Oca, A., Somekh, A., &amp; Biswas, S. (2025, April 17). <em>Beyond automation:
+          How Gen AI is reshaping supply chains.</em> McKinsey &amp; Company.
+        </li>
+        <li>
+          Tsidulko, J. (2024, January 11). <em>Benefits of AI in the supply chain.</em>
+          Oracle. https://www.oracle.com/ca-en/scm/ai-supply-chain/
+        </li>
+        <li>
+          Van Hoek, R., &amp; Lacity, M. (2023). How global companies use AI to prevent
+          supply chain disruptions. <em>Harvard Business Review Digital Articles</em>, 1–7.
+        </li>
+        <li>
+          Walch, K. (2025, February 19). <em>How AI is reshaping the entire supply chain.</em>
+          Forbes.
+        </li>
+        <li>
+          SAP. (n.d.). <em>What is AI in supply chain management? Examples and use cases.</em>
+          https://www.sap.com/resources/ai-in-supply-chain-management
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    BUS 237 · D202 Group 3 – AI in Supply Chain Automation · Hosted via GitHub Pages
+  </footer>
+</body>
+</html>
