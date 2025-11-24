@@ -23,6 +23,37 @@
     * {
       box-sizing: border-box;
     }
+    .image-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 800px) {
+      .image-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .image-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
     body {
       margin: 0;
@@ -567,6 +598,34 @@
         forecasting, sourcing, and logistics across industries like retail,
         manufacturing, and transportation (Walch, 2025; Tsidulko, 2024).
       </p>
+    </section>
+    <!-- Visual Gallery -->
+    <section id="gallery">
+      <h2>AI-Powered Warehouses – Visual Examples</h2>
+      <p>
+        These images show how AI-enabled robots and automated systems move,
+        store, and retrieve inventory inside modern fulfillment centers.
+      </p>
+      <div class="image-grid">
+        <div class="image-card">
+          <img src="robot-path.jpg" alt="Top-down view of robots navigating warehouse paths" />
+          <div class="image-caption">
+            Robots follow optimized paths through dense storage layouts to reduce travel time.
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="blue-crates.jpg" alt="Automated system lifting blue crates in a warehouse" />
+          <div class="image-caption">
+            AI and robotics coordinate lifting and stacking of crates for efficient storage.
+          </div>
+        </div>
+        <div class="image-card">
+          <img src="orange-robots.jpg" alt="Many orange warehouse robots moving shelves" />
+          <div class="image-caption">
+            Swarms of mobile robots bring shelves to workers instead of workers walking to shelves.
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Outlook -->
