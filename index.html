@@ -65,22 +65,37 @@
     }
 
     header {
-      padding: 4.5rem 1.5rem 2.8rem;
+      padding: 4.5rem 1.5rem 3.2rem;
       text-align: center;
       border-bottom: 1px solid rgba(15, 23, 42, 0.9);
-      background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
       position: relative;
       overflow: hidden;
+      background: radial-gradient(circle at top, #020617 0, #020617 60%, #000 100%);
     }
 
+    /* Faded hero background image */
     header::before {
       content: "";
       position: absolute;
-      inset: -40%;
+      inset: 0;
       background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.3), transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.25), transparent 55%);
-      opacity: 0.8;
+        linear-gradient(to bottom, rgba(2, 6, 23, 0.1), rgba(2, 6, 23, 0.92)),
+        url("hero-warehouse.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;              /* controls how faded it looks */
+      mix-blend-mode: screen;      /* helps it blend into the dark theme */
+      z-index: -2;
+    }
+
+    /* subtle glow on top of the image */
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.28), transparent 55%);
+      opacity: 0.6;
       z-index: -1;
     }
 
@@ -196,6 +211,33 @@
 
     section {
       margin-bottom: 3rem;
+      position: relative;
+      padding-top: 0.5rem;
+    }
+
+    /* section accent lines */
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.7;
+    }
+
+    section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 4%;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+      opacity: 0.25;
     }
 
     h2 {
