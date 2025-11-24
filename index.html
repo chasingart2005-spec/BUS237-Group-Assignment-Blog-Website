@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -23,6 +23,7 @@
     * {
       box-sizing: border-box;
     }
+
     .image-grid {
       display: grid;
       gap: 1rem;
@@ -94,7 +95,7 @@
       font-size: 1.05rem;
       color: var(--muted);
       max-width: 650px;
-      margin: 0.3rem auto 1.5rem;
+      margin: 0.3rem auto 1rem;
     }
 
     .meta {
@@ -274,30 +275,6 @@
       font-style: italic;
     }
 
-    .team-grid {
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    @media (min-width: 700px) {
-      .team-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .team-member {
-      padding: 0.8rem 0.9rem;
-      border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 0.9rem;
-    }
-
-    .team-member strong {
-      display: block;
-      margin-bottom: 0.1rem;
-    }
-
     .refs {
       font-size: 0.85rem;
       color: var(--muted);
@@ -340,8 +317,12 @@
       logistics, and decision-making across global supply chains.
     </p>
     <div class="meta">
-      BUS 237 – Introduction to Business Technology Management<br />
+      <strong>BUS 237 – Introduction to Business Technology Management</strong><br />
       Tutorial <strong>D202</strong> · Group <strong>3</strong>
+    </div>
+    <div class="meta" style="margin-top: 0.5rem;">
+      <strong>Group Members:</strong><br />
+      Chase Tone · Syed Ibrahim · Keyan Jagpal · Malik Iddi Mbita · Christopher Jang
     </div>
     <div class="badge-row">
       <span class="badge">Topic: AI in Supply Chain Automation</span>
@@ -360,7 +341,6 @@
         <a href="#pros-cons">Advantages &amp; Costs</a>
         <a href="#examples">Real World Examples</a>
         <a href="#outlook">Future Outlook</a>
-        <a href="#team">Team</a>
         <a href="#references">References</a>
       </div>
     </div>
@@ -593,12 +573,35 @@
           </p>
         </div>
       </div>
-      <p>
-        Beyond Amazon, many other companies are integrating AI to support
+
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="example-label">Case Study · Walmart</div>
+        <h3>Walmart – AI Automation in Negotiation</h3>
+        <p>
+          Walmart uses <strong>Pactum</strong>, an AI negotiation platform, to automate
+          negotiations with “tail-end” suppliers that provide low-value items.
+          These small suppliers would be too numerous and time-consuming for
+          traditional manual negotiations. By automating the process, Walmart can:
+        </p>
+        <ul>
+          <li>Efficiently manage hundreds of lower-level suppliers</li>
+          <li>Standardize contract terms and improve compliance</li>
+          <li>Free up procurement staff to focus on more strategic deals</li>
+        </ul>
+        <p>
+          Without this AI-driven approach to inventory procurement, Walmart would
+          struggle to negotiate effectively with all of these suppliers
+          (Van Hoek et al., 2022).
+        </p>
+      </div>
+
+      <p style="margin-top: 1rem;">
+        Beyond Amazon and Walmart, many other companies are integrating AI to support
         forecasting, sourcing, and logistics across industries like retail,
         manufacturing, and transportation (Walch, 2025; Tsidulko, 2024).
       </p>
     </section>
+
     <!-- Visual Gallery -->
     <section id="gallery">
       <h2>AI-Powered Warehouses – Visual Examples</h2>
@@ -659,44 +662,6 @@
       </p>
     </section>
 
-    <!-- Team -->
-    <section id="team">
-      <h2>Group Members &amp; Tutorial Info</h2>
-      <p>
-        This website was created for the BUS 237 group project on
-        <strong>AI in Supply Chain Automation</strong>.
-      </p>
-      <p>
-        Tutorial: <strong>D202</strong> · Group: <strong>3</strong>
-      </p>
-      <div class="team-grid">
-        <div class="team-member">
-          <strong>Syed Ibrahim</strong>
-          <span>Research &amp; writing – overview and impact of AI.</span>
-        </div>
-        <div class="team-member">
-          <strong>Keyan Jagpal</strong>
-          <span>Research – applications &amp; advantages.</span>
-        </div>
-        <div class="team-member">
-          <strong>Christopher Jang</strong>
-          <span>Slides &amp; structure – key applications and visuals.</span>
-        </div>
-        <div class="team-member">
-          <strong>Malik iddi Mbita</strong>
-          <span>Research – disadvantages, costs, and risk considerations.</span>
-        </div>
-        <div class="team-member">
-          <strong>Chase Tone</strong>
-          <span>Website &amp; editing – converting report and slides into web format.</span>
-        </div>
-      </div>
-      <p class="tagline">
-        All BUS 237 students are welcome to browse this site as a summary of our
-        report and presentation on AI in supply chain automation.
-      </p>
-    </section>
-
     <!-- References -->
     <section id="references">
       <h2>References &amp; Further Reading</h2>
@@ -725,6 +690,10 @@
         <li>
           Tsidulko, J. (2024, January 11). <em>Benefits of AI in the supply chain.</em>
           Oracle. https://www.oracle.com/ca-en/scm/ai-supply-chain/
+        </li>
+        <li>
+          Van Hoek, R., DeWitt, M., Lacity, M., &amp; Johnson, T. (2022). How Walmart
+          automated supplier negotiations. <em>Harvard Business Review Digital Articles</em>, 1–6.
         </li>
         <li>
           Van Hoek, R., &amp; Lacity, M. (2023). How global companies use AI to prevent
